@@ -13,22 +13,22 @@
     <link rel="stylesheet" href="/public/stylesheets/style.min.css">
     <!--Conectando css-->
     <link href="/public/stylesheets/style.css" rel="stylesheet" >
-    <script src="/public/javascripts/index.js"></script>
 </head>
 <body>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Casas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <a class="menubtn"> <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto show-desktop hide-mobile">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ver">Todas las Casas</a>
+              <a class="nav-link" href="/ver">Todas las Casas<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/actualizar">Actualizar</a>
@@ -37,11 +37,52 @@
               <a class="nav-link" href="/nuevo">Nueva Casa</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" method="GET" action="/" >
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar una casa" id="inpsea" name="o">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="seabtn">Buscar</button>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar una casa">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
           </form>
         </div>
       </nav>
+      </header>
+      <header class="masthead" >
+        <body background="/public/img/mirror-house-4640244_1920.jpg">
+          <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+              <h1 class="mx-auto my-0 text-uppercase">Busca una Casa</h1>
+              <h2 class="text-black-50 mx-auto mt-2 mb-5">Aprende todo lo que tienes que saber acerca de tus casas favoritos</h2>
+              <a href="#about" class="btn btn-primary js-scroll-trigger">¿Que puedo hacer en la pagina?</a>
+            </div>
+          </div>
+        </body>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section id="about" class="about-section text-center">
+            <div class="container">
+              <h2 class="text-white mb-4 ">¿Que puedo hacer en la pagina?</h2>
+              <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <p class="text-primary whiteback">Puedes ver nuestro catalogo de casas que estan en nuestra pagina en el boton de Todas las casas</p>
+                  </article>
+                </div>
+        
+                <div class="col-md-4 mb-3 mb-md-0" id="dos">
+                  <p class="text-primary whiteback"> Tambien puedes ayudar a la pagina actualizando la informacion sobre las casas en el boton Actualizar  
+                  </p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                  <p class="text-primary whiteback"> Si tu quieres agregar informacion de alguna casa puedes hacerla en el boton Nueva Casa
+                  </p>
+                </div>
+              </body>
+              </div>
+              <div>
+                <p class="space"></p>
+              </div>
+        
+            </div>
+          </section>
 </body>
 </html>

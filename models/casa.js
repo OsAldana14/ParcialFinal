@@ -2,18 +2,18 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var CasaSchema = Schema({
-    ubicacion: {
+    owner: {
         type: String,
         required: true,
         unique: true
     },
-    owner: {
+    ubicacion: {
         type: String,
         required: true
     },
     habitaciones: {
         type: Number,
-        required: true
+        required: true,
     },
     cochera: Boolean
 }, {

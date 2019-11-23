@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var debug = require('debug')('blog:database');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var casasRouter = require('./routes/casas');
 
 // Conect to database
 
@@ -45,7 +45,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/casas', casasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -60,7 +60,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('new');
+  console.log("Error")
 });
 
 module.exports = app;

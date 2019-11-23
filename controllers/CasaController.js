@@ -40,8 +40,8 @@ module.exports.getAll = (req, res, next) => {
             [sortProperty]: sort
         })
         .then((casas) => {
-            debug("Casa encontrada", casa);
-            return res.status(200).json(casa)
+            debug("Casa encontrada", casas);
+            return res.status(200).json(casas)
         }).catch(err => {
             next(err);
         });

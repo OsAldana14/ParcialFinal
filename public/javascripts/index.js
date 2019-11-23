@@ -4,8 +4,9 @@ const InputSearch = document.querySelector("#seainp");
 
 btnSearch.addEventListener('click', ()=>{
     
-})
-}
+})   
+  }
+
 window.onload = function() {
     init();
   };
