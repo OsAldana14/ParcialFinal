@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/public/stylesheets/style.min.css">
     <!--Conectando css-->
     <link href="/public/stylesheets/style.css" rel="stylesheet" >
+    <script src="/public/javascripts/index.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -27,18 +28,18 @@
               <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Todas las Casas</a>
+              <a class="nav-link" href="/ver">Todas las Casas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Actualizar</a>
+              <a class="nav-link" href="/actualizar">Actualizar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nueva Casa</a>
+              <a class="nav-link" href="/nuevo">Nueva Casa</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar una casa">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+          <form class="form-inline my-2 my-lg-0" method="GET" action="/" >
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar una casa" id="inpsea" name="o">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="seabtn">Buscar</button>
           </form>
         </div>
       </nav>

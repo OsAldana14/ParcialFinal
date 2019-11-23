@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+    
+    <title>Casa</title>
+
+    <link rel="stylesheet" href="/public/stylesheets/style.min.css">
+    <!--Conectando css-->
+    <link href="/public/stylesheets/style.css" rel="stylesheet" >
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Casas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ver">Todas las Casas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/actualizar">Actualizar</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/nuevo">Nueva Casa<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar una casa">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+      <div class="limiter">
+		<div class="container-login100" style="background-image: url('/public/img/stars.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-formtitle p-b-41">
+					Ingresa una Casa!
+				</span>
+				<form action="/addHouse" method="POST" class="login100-form validate-form p-b-33 p-t-5">
+
+					<div class="wrap-input100 validate-input" data-validate="Nombre del Dueño">
+						<input class="input100" type="text" name="owner" placeholder="Nombre del Dueño" id="owner_field">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Ubicacion">
+						<input class="input100" type="text" name="Ubicacion" placeholder="Ubicacion" id="ubi_field">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+					
+                    <div class="wrap-input100 validate-input" data-validate="Numero de Habitaciones">
+                            <input class="input100" type="text" placeholder="Numero de Habitaciones" id="habi_field">
+                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+					<div class="wrap-input100 validate-input" data-validate="cochera?">
+                        <input class="input100" type="checkbox" placeholder="Tiene cochera?" id="coch_field">
+                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" type="submit">
+							<a class = "clickBigger" id="submit_btn" >Crear!</a>
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>

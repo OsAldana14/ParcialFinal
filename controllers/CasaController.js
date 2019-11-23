@@ -50,38 +50,36 @@ module.exports.getAll = (req, res, next) => {
 
 // Nueva Casa
 
-module.exports.register = (req, res, next) => {
-    debug("Nueva Casa", {
-        body: req.body
-    });
-    Casa.findOne({
-            owner: req.body.owner
-        })
-        .then((foundCasa) => {
-            if (foundCasa) {
-                debug("Usuario duplicado");
-                throw new Error(`Casa duplicada ${req.body.owner}`);
-            } else {
-                let newCasa = new Casa({
-                    owner: req.body.owner,
-                    first_name: req.body.firts_name || "",
-                    last_name: req.body.last_name || "",
-                    email: req.body.email,
-                    password: req.body.password /*TODO: Modificar, hacer hash del password*/
-                });
-                return newCasa.save();
-            }
-        }).then(casa => {
-            return res
-                .header('Location', '/casas/' + casa.owner)
-                .status(201)
-                .json({
-                    owner: casa.owner
-                });
-        }).catch(err => {
-            next(err);
+module.exports.insert = (req, res)=>{
+    /**
+     * Para ver el funcionamiento de req.body hacer:
+     * console.log(req.body);
+     */
+
+    if(!req.body.owner || !req.body.ubicacion || !req.body.habitaciones ||  req.body.cochera ==undefined){
+        return res.status(400).json({
+            message: "There are missing fields",
         });
+    }
+    
+    let register = new Register(
+        req.body
+    );
+
+    register.datetime = new Date();
+
+    register.save((err, nRegister)=>{
+        if(err) return res.status(500).json({
+            message: "Something happend trying to insert Register",
+        });
+
+        res.status(200).json({
+            message: "Insert registration was successful",
+            register: nRegister
+        });
+    })
 }
+
 
 
 // Update casa 
